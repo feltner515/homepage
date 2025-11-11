@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Langdon Feltner | Shot Peening & Digital Manufacturing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #f5f5f5;
+      --card: #ffffff;
+      --ink: #222;
+      --muted: #555;
+      --accent: #0069ff;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    header {
+      background: #0f172a;
+      color: #fff;
+      padding: 2.5rem 1.5rem 2rem;
+    }
+    header .inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    h1 {
+      margin: 0 0 .5rem;
+      font-size: clamp(2rem, 4vw, 2.6rem);
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .tagline {
+      max-width: 46rem;
+      color: rgba(255,255,255,.85);
+    }
+    main {
+      max-width: 1080px;
+      margin: -1.5rem auto 3rem;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--card);
+      border-radius: .75rem;
+      padding: 1.25rem 1.25rem 1.5rem;
+      box-shadow: 0 12px 35px rgba(15,23,42,0.08);
+    }
+    .section-title {
+      font-size: 1.05rem;
+      margin-bottom: .75rem;
+      border-bottom: 1px solid rgba(0,0,0,.05);
+      padding-bottom: .4rem;
+    }
+    ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+      margin-top: .5rem;
+    }
+    .pill {
+      display: inline-block;
+      background: rgba(0,105,255,.08);
+      color: #0f172a;
+      padding: .25rem .55rem;
+      font-size: .7rem;
+      border-radius: 999px;
+      margin: 0 .4rem .4rem 0;
+      white-space: nowrap;
+    }
+    .muted {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem 3rem;
+      color: #777;
+      font-size: .8rem;
+    }
+    @media (max-width: 900px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="inner">
+      <h1>Langdon Feltner</h1>
+      <p class="tagline">
+        PhD candidate, School of Materials Engineering, Purdue University. Modeling and validation of industrial shot peening — linking stochastic impact processes to residual stress fields, surface fabric, and digital twins for manufacturing.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Left column -->
+    <div>
+      <section class="card" aria-labelledby="who-i-am">
+        <h2 id="who-i-am" class="section-title">Who I am</h2>
+        <p>
+          I’m a PhD candidate in Materials Engineering at Purdue working in the Center for Surface
+          Engineering and Enhancement (CSEE) and the Manufacturing and Materials Research Laboratories (MMRL).
+          My dissertation pulls together numerical RVEs, Eshelby/inclusion-style analytical models, and
+          experimental shot peening to explain why residual stress fields look heterogeneous even under
+          nominally uniform process settings.
+        </p>
+        <p class="muted">
+          Current timeline: finishing ~Dec&nbsp;2025; preparing several manuscripts (spectral fabric of residual
+          stresses, flowsheet-based digital twin for shot peening, Eshelby-based formulations).
+        </p>
+      </section>
+
+      <section class="card" aria-labelledby="what-im-working-on">
+        <h2 id="what-im-working-on" class="section-title">What I’m working on</h2>
+        <p>Core threads I’m actively developing:</p>
+        <ul>
+          <li>
+            <strong>Eshelby-based residual stress modeling for shot peening</strong> — treating individual impacts
+            as inclusion-like events, then superposing and PSD-correcting to match FEM ensembles.
+          </li>
+          <li>
+            <strong>RVE/FEM validation</strong> — 3D RVEs with random impact fields (10–500 impacts, 45–105&nbsp;m/s)
+            to benchmark the analytical/spectral model and quantify variability.
+          </li>
+          <li>
+            <strong>Flowsheet / digital-twin architecture</strong> — connecting media condition, impact energy,
+            coverage (Poisson-type models), and stress outcomes so an industrial peening cell can be steered in
+            real time.
+          </li>
+          <li>
+            <strong>ML surrogates for impact sequences</strong> — CNN&nbsp;+&nbsp;BiLSTM/attention models to learn
+            stress-field evolution from multiple impacts, trained with Wasserstein-style losses.
+          </li>
+          <li>
+            <strong>Experimental tie-in</strong> — future strip/materials campaign (e.g. AM&nbsp;316L vs&nbsp;SAE&nbsp;1070)
+            to map microstructural deformation mechanisms to the “fabric” we predict numerically.
+          </li>
+        </ul>
+        <p class="muted">
+          Themes: stochasticity in surface enhancement, spectral descriptions, and making models usable
+          by industry partners (not just in a notebook).
+        </p>
+        <div>
+          <span class="pill">shot peening</span>
+          <span class="pill">residual stress</span>
+          <span class="pill">Eshelby / inclusions</span>
+          <span class="pill">RVE FEM</span>
+          <span class="pill">digital twin</span>
+          <span class="pill">Wasserstein fitting</span>
+        </div>
+      </section>
+    </div>
+
+    <!-- Right column -->
+    <div>
+      <section class="card" aria-labelledby="who-i-work-with">
+        <h2 id="who-i-work-with" class="section-title">Who I work with</h2>
+        <p><strong>Academic / Purdue:</strong></p>
+        <ul>
+          <li>Advisor: <strong>Prof. Paul&nbsp;Mort</strong> (surface engineering, shot peening)</li>
+          <li>Center for Surface Engineering and Enhancement (CSEE)</li>
+          <li>MMRL Shot Peening Center of Excellence</li>
+        </ul>
+        <p><strong>Industry / collaborators (recurring):</strong></p>
+        <ul>
+          <li>Electronics Inc. (Almen systems, process input)</li>
+          <li>Progressive Surface / industrial peening integrators</li>
+          <li>American Axle &amp; Manufacturing (application-driven components)</li>
+          <li>Sandia National Laboratories (simulation &amp; OED context from recent seminar)</li>
+        </ul>
+        <p class="muted">
+          Most of the current modeling is written to be explainable to these groups — i.e. to bridge
+          academic formulations (Eshelby, spectra, variograms) with the parameters they actually control
+          (media size, blast pressure, impact angle, coverage).
+        </p>
+      </section>
+
+      <section class="card" aria-labelledby="contact">
+        <h2 id="contact" class="section-title">Contact / links</h2>
+        <p>
+          E-mail: <a href="mailto:feltnerl@purdue.edu">feltnerl@purdue.edu</a><br />
+          GitHub Pages target: <code>https://langdonfeltner.github.io</code> (map to <code>langdonfeltner.com</code>)
+        </p>
+        <p class="muted">
+          Add this file to a GitHub Pages repo, set the custom domain in repo settings, and point your DNS at
+          GitHub’s A records.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Langdon Feltner — Purdue University, Materials Engineering.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
