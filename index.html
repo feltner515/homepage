@@ -6,94 +6,150 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
-      --bg: #f5f5f5;
-      --card: #ffffff;
-      --ink: #222;
-      --muted: #555;
-      --accent: #0069ff;
+      --bg: #f4f2e8;
+      --card: #fffffd;
+      --ink: #222222;
+      --muted: #555555;
+      --accent: #0000cc;
     }
+
     * {
       box-sizing: border-box;
     }
+
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: Verdana, Tahoma, Geneva, sans-serif;
       background: var(--bg);
       color: var(--ink);
       line-height: 1.6;
+      font-size: 14px;
     }
+
     header {
-      background: #0f172a;
-      color: #fff;
-      padding: 2.5rem 1.5rem 2rem;
+      background: linear-gradient(to bottom, #003366, #000022);
+      color: #ffffff;
+      padding: 1.75rem 1rem 1.5rem;
+      border-bottom: 3px solid #ffcc33;
     }
+
     header .inner {
-      max-width: 1080px;
+      max-width: 900px;
       margin: 0 auto;
     }
+
     h1 {
-      margin: 0 0 .5rem;
-      font-size: clamp(2rem, 4vw, 2.6rem);
+      margin: 0 0 0.25rem;
+      font-size: 1.8rem;
+      letter-spacing: 0.03em;
     }
+
+    .tagline {
+      max-width: 46rem;
+      color: #f0f4ff;
+      font-size: 0.9rem;
+    }
+
+    .top-nav {
+      margin-top: 0.75rem;
+      font-size: 0.8rem;
+    }
+
+    .top-nav a {
+      color: #ffdd66;
+      text-decoration: none;
+    }
+
+    .top-nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 900px;
+      margin: -0.75rem auto 2.5rem;
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 4px;
+      padding: 0.9rem 0.9rem 1.1rem;
+      border: 1px solid #cccccc;
+    }
+
+    .section-title {
+      margin: 0 0 0.6rem;
+      padding: 0.3rem 0.4rem;
+      font-size: 0.85rem;
+      font-variant: small-caps;
+      letter-spacing: 0.08em;
+      background: #eef2ff;
+      border-bottom: 1px solid #c0c0c0;
+    }
+
     h2 {
       margin-top: 0;
     }
-    .tagline {
-      max-width: 46rem;
-      color: rgba(255,255,255,.85);
+
+    p {
+      margin: 0 0 0.7rem;
     }
-    main {
-      max-width: 1080px;
-      margin: -1.5rem auto 3rem;
-      padding: 0 1.5rem;
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 1.5rem;
-    }
-    .card {
-      background: var(--card);
-      border-radius: .75rem;
-      padding: 1.25rem 1.25rem 1.5rem;
-      box-shadow: 0 12px 35px rgba(15,23,42,0.08);
-    }
-    .section-title {
-      font-size: 1.05rem;
-      margin-bottom: .75rem;
-      border-bottom: 1px solid rgba(0,0,0,.05);
-      padding-bottom: .4rem;
-    }
+
     ul {
-      list-style: disc;
-      padding-left: 1.25rem;
-      margin-top: .5rem;
+      list-style: square;
+      padding-left: 1.2rem;
+      margin: 0.25rem 0 0.7rem;
     }
+
     .pill {
       display: inline-block;
-      background: rgba(0,105,255,.08);
-      color: #0f172a;
-      padding: .25rem .55rem;
-      font-size: .7rem;
+      background: #f3f3f3;
+      border: 1px solid #cccccc;
+      padding: 0.1rem 0.35rem;
+      font-size: 0.7rem;
       border-radius: 999px;
-      margin: 0 .4rem .4rem 0;
+      margin: 0 0.3rem 0.3rem 0;
       white-space: nowrap;
     }
+
     .muted {
       color: var(--muted);
-      font-size: .9rem;
+      font-size: 0.85rem;
     }
+
     a {
       color: var(--accent);
-      text-decoration: none;
-    }
-    a:hover {
       text-decoration: underline;
     }
+
+    a:visited {
+      color: #660099;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.85em;
+      background: #f2f2f2;
+      padding: 0.05rem 0.2rem;
+      border: 1px solid #dddddd;
+    }
+
     footer {
       text-align: center;
-      padding: 2rem 1.5rem 3rem;
-      color: #777;
-      font-size: .8rem;
+      padding: 1.5rem 1rem 2.5rem;
+      color: #777777;
+      font-size: 0.75rem;
+      border-top: 1px solid #cccccc;
+      background: #f8f6ee;
     }
+
     @media (max-width: 900px) {
       main {
         grid-template-columns: 1fr;
@@ -108,6 +164,12 @@
       <p class="tagline">
         PhD candidate, School of Materials Engineering, Purdue University. Modeling and validation of industrial shot peening — linking stochastic impact processes to residual stress fields, surface fabric, and digital twins for manufacturing.
       </p>
+      <div class="top-nav">
+        <a href="#who-i-am">Who I am</a> |
+        <a href="#what-im-working-on">Research</a> |
+        <a href="#dissertation">Dissertation</a> |
+        <a href="#contact">Contact</a>
+      </div>
     </div>
   </header>
 
@@ -170,47 +232,46 @@
       </section>
     </div>
 
-  <!-- Right column -->
-  <div>
-    <section class="card" aria-labelledby="who-i-work-with">
-      <h2 id="who-i-work-with" class="section-title">Who I work with</h2>
-      <p><strong>Academic / Purdue:</strong></p>
-      <ul>
-        <li>Advisor: <strong>Prof. Paul Mort</strong></li>
-        <li>Center for Surface Engineering and Enhancement (CSEE)</li>
-        <li>MMRL Shot Peening Center of Excellence</li>
-      </ul>
-      <p><strong>Industry / collaborators:</strong></p>
-      <ul>
-        <li>Electronics Inc.</li>
-        <li>Progressive Surface</li>
-        <li>American Axle &amp; Manufacturing</li>
-        <li>Sandia National Laboratories</li>
-      </ul>
-    </section>
-  
-    <section class="card" aria-labelledby="dissertation">
-      <h2 id="dissertation" class="section-title">Dissertation</h2>
-      <p>
-        <a href="20251104_Feltner_Dissertation.pdf" download>
-          Spectral Characterization and Reduced-Order Modeling of Industrial Shot Peening (PDF)
-        </a>
-      </p>
-      <p class="muted">
-        Dissertation covering Poisson impact modeling, spectral fabric, DIA-based media characterization,
-        and ML-enabled flowsheets.  [oai_citation:0‡20251104_Feltner_Dissertation.pdf](sediment://file_00000000f11071f7964f8fdeb1db9f68)
-      </p>
-    </section>
-  
-    <section class="card" aria-labelledby="contact">
-      <h2 id="contact" class="section-title">Contact / links</h2>
-      <p>
-        E-mail: <a href="mailto:lfeltner@purdue.edu">lfeltner@purdue.edu</a><br />
-        GitHub Pages: <code>https://feltner515.github.io/homepage/</code>
-      </p>
-    </section>
-  </div>
-    
+    <!-- Right column -->
+    <div>
+      <section class="card" aria-labelledby="who-i-work-with">
+        <h2 id="who-i-work-with" class="section-title">Who I work with</h2>
+        <p><strong>Academic / Purdue:</strong></p>
+        <ul>
+          <li>Advisor: <strong>Prof. Paul Mort</strong></li>
+          <li>Center for Surface Engineering and Enhancement (CSEE)</li>
+          <li>MMRL Shot Peening Center of Excellence</li>
+        </ul>
+        <p><strong>Industry / collaborators:</strong></p>
+        <ul>
+          <li>Electronics Inc.</li>
+          <li>Progressive Surface</li>
+          <li>American Axle &amp; Manufacturing</li>
+          <li>Sandia National Laboratories</li>
+        </ul>
+      </section>
+
+      <section class="card" aria-labelledby="dissertation">
+        <h2 id="dissertation" class="section-title">Dissertation</h2>
+        <p>
+          <a href="20251104_Feltner_Dissertation.pdf" download>
+            Spectral Characterization and Reduced-Order Modeling of Industrial Shot Peening (PDF)
+          </a>
+        </p>
+        <p class="muted">
+          Dissertation covering Poisson impact modeling, spectral fabric, DIA-based media characterization,
+          and ML-enabled flowsheets.
+        </p>
+      </section>
+
+      <section class="card" aria-labelledby="contact">
+        <h2 id="contact" class="section-title">Contact / links</h2>
+        <p>
+          E-mail: <a href="mailto:lfeltner@purdue.edu">lfeltner@purdue.edu</a><br />
+          GitHub Pages: <code>https://feltner515.github.io/homepage/</code>
+        </p>
+      </section>
+    </div>
   </main>
 
   <footer>
