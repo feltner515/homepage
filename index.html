@@ -2,15 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Langdon Feltner | Shot Peening & Digital Manufacturing</title>
+  <title>Langdon Feltner | Particulate Materials &amp; Surface Enhancement</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Langdon Feltner — Assistant Professor of Mechanical Engineering and Engineering Science, UNC Charlotte. Powder characterization, particle shape effects on the mechanics of particulate materials, and surface enhancement processes." />
   <style>
     :root {
-      --bg: #f4f2e8;
-      --card: #fffffd;
-      --ink: #222222;
-      --muted: #555555;
-      --accent: #0000cc;
+      /* UNC Charlotte brand palette */
+      --charlotte-green: #005035;
+      --charlotte-green-dark: #00301f;
+      --niner-gold: #a49665;
+      --niner-gold-light: #c9bd96; /* tint for gold text on green (contrast) */
+      --jasper: #f1e6b2;
+      --pine: #899064;
+      --ore-black: #101820;
+
+      --bg: #f5f4ee;
+      --card: #ffffff;
+      --ink: #1c1c1c;
+      --muted: #55605a;
+      --accent: #005035;
+      --rule: #cfd4cf;
     }
 
     * {
@@ -27,10 +38,10 @@
     }
 
     header {
-      background: linear-gradient(to bottom, #003366, #000022);
+      background: linear-gradient(to bottom, var(--charlotte-green), var(--charlotte-green-dark));
       color: #ffffff;
       padding: 1.75rem 1rem 1.5rem;
-      border-bottom: 3px solid #ffcc33;
+      border-bottom: 3px solid var(--niner-gold);
     }
 
     header .inner {
@@ -39,14 +50,22 @@
     }
 
     h1 {
-      margin: 0 0 0.25rem;
+      margin: 0 0 0.15rem;
       font-size: 1.8rem;
       letter-spacing: 0.03em;
     }
 
+    .role {
+      margin: 0 0 0.5rem;
+      font-size: 0.85rem;
+      font-variant: small-caps;
+      letter-spacing: 0.09em;
+      color: var(--niner-gold-light);
+    }
+
     .tagline {
       max-width: 46rem;
-      color: #f0f4ff;
+      color: #eef3f0;
       font-size: 0.9rem;
     }
 
@@ -56,7 +75,7 @@
     }
 
     .top-nav a {
-      color: #ffdd66;
+      color: var(--jasper);
       text-decoration: none;
     }
 
@@ -77,7 +96,7 @@
       background: var(--card);
       border-radius: 4px;
       padding: 0.9rem 0.9rem 1.1rem;
-      border: 1px solid #cccccc;
+      border: 1px solid var(--rule);
     }
 
     .section-title {
@@ -86,8 +105,9 @@
       font-size: 0.85rem;
       font-variant: small-caps;
       letter-spacing: 0.08em;
-      background: #eef2ff;
-      border-bottom: 1px solid #c0c0c0;
+      color: var(--charlotte-green);
+      background: #e8efea;
+      border-bottom: 1px solid var(--charlotte-green);
     }
 
     h2 {
@@ -104,10 +124,15 @@
       margin: 0.25rem 0 0.7rem;
     }
 
+    li::marker {
+      color: var(--charlotte-green);
+    }
+
     .pill {
       display: inline-block;
-      background: #f3f3f3;
-      border: 1px solid #cccccc;
+      background: #eef2ee;
+      border: 1px solid var(--pine);
+      color: var(--charlotte-green);
       padding: 0.1rem 0.35rem;
       font-size: 0.7rem;
       border-radius: 999px;
@@ -126,7 +151,7 @@
     }
 
     a:visited {
-      color: #660099;
+      color: #3d2f5c;
     }
 
     a:hover {
@@ -136,18 +161,26 @@
     code {
       font-family: "Courier New", Courier, monospace;
       font-size: 0.85em;
-      background: #f2f2f2;
+      background: #f1f3f1;
       padding: 0.05rem 0.2rem;
-      border: 1px solid #dddddd;
+      border: 1px solid var(--rule);
+    }
+
+    .callout {
+      border-left: 3px solid var(--niner-gold);
+      background: #fbf8ec;
+      padding: 0.5rem 0.7rem;
+      margin: 0 0 0.7rem;
+      font-size: 0.85rem;
     }
 
     footer {
       text-align: center;
       padding: 1.5rem 1rem 2.5rem;
-      color: #777777;
+      color: #5c655f;
       font-size: 0.75rem;
-      border-top: 1px solid #cccccc;
-      background: #f8f6ee;
+      border-top: 3px solid var(--charlotte-green);
+      background: #eef2ee;
     }
 
     @media (max-width: 900px) {
@@ -161,12 +194,16 @@
   <header>
     <div class="inner">
       <h1>Langdon Feltner</h1>
+      <p class="role">Assistant Professor &middot; Mechanical Engineering and Engineering Science &middot; UNC Charlotte</p>
       <p class="tagline">
-        PhD candidate, School of Materials Engineering, Purdue University. Modeling and validation of industrial shot peening — linking stochastic impact processes to residual stress fields, surface fabric, and digital twins for manufacturing.
+        I study how particles behave in bulk, how size, shape, and morphology are measured, and how those
+        descriptors govern packing, flow, impact, and the mechanics of particulate materials. Applications run
+        from powder feedstocks to surface enhancement processes like shot peening.
       </p>
       <div class="top-nav">
         <a href="#who-i-am">Who I am</a> |
-        <a href="#what-im-working-on">Research</a> |
+        <a href="#research">Research</a> |
+        <a href="#group">Group</a> |
         <a href="#dissertation">Dissertation</a> |
         <a href="#contact">Contact</a>
       </div>
@@ -179,76 +216,85 @@
       <section class="card" aria-labelledby="who-i-am">
         <h2 id="who-i-am" class="section-title">Who I am</h2>
         <p>
-          I’m a PhD candidate in Materials Engineering at Purdue working in the Center for Surface
-          Engineering and Enhancement (CSEE) and the Manufacturing and Materials Research Laboratories (MMRL).
-          My dissertation pulls together numerical RVEs, Eshelby/inclusion-style analytical models, and
-          experimental shot peening to explain why residual stress fields look heterogeneous even under
-          nominally uniform process settings.
+          I’m an Assistant Professor in the Department of Mechanical Engineering and Engineering Science in the
+          William States Lee College of Engineering at UNC&nbsp;Charlotte. My work sits at the intersection of
+          <strong>powder characterization</strong> and <strong>the mechanics of particulate materials</strong>:
+          quantifying the size, shape, and surface morphology of a powder or media population, then connecting
+          those distributions to how the material packs, flows, deforms, degrades, and transfers energy on impact.
         </p>
-        <p class="muted">
-          Current timeline: finishing ~Dec&nbsp;2025; preparing several manuscripts (spectral fabric of residual
-          stresses, flowsheet-based digital twin for shot peening, Eshelby-based formulations).
+        <p>
+          I did my PhD in Materials Engineering at Purdue University, where I studied industrial shot
+          peening — a process in which a surface is bombarded with steel or ceramic particles, producing a residual stress
+          field that industry needs to predict and control.
         </p>
       </section>
 
-      <section class="card" aria-labelledby="what-im-working-on">
-        <h2 id="what-im-working-on" class="section-title">What I’m working on</h2>
-        <p>Core threads I’m actively developing:</p>
+      <section class="card" aria-labelledby="research">
+        <h2 id="research" class="section-title">Research</h2>
+        <p>Core threads I’m building the group around:</p>
         <ul>
           <li>
-            <strong>Eshelby-based residual stress modeling for shot peening</strong> — treating individual impacts
-            as inclusion-like events, then superposing and PSD-correcting to match FEM ensembles.
+            <strong>Powder and media characterization</strong> — dynamic image analysis, shape descriptors
+            (aspect ratio, circularity, convexity, roundness, higher-order form factors), and joint size–shape
+            distributions. Getting past D50 and toward descriptors that actually predict behavior.
           </li>
           <li>
-            <strong>RVE/FEM validation</strong> — 3D RVEs with random impact fields (10–500 impacts, 45–105&nbsp;m/s)
-            to benchmark the analytical/spectral model and quantify variability.
+            <strong>Shape effects on bulk mechanics</strong> — how particle morphology controls packing density,
+            coordination number, shear strength, compaction response, and flowability in granular assemblies.
           </li>
           <li>
-            <strong>Flowsheet / digital-twin architecture</strong> — connecting media condition, impact energy,
-            coverage (Poisson-type models), and stress outcomes so an industrial peening cell can be steered in
-            real time.
+            <strong>Impact mechanics of non-spherical particles</strong> — energy transfer, contact area, and
+            plastic work when the impactor isn’t a sphere; how a shape distribution propagates into a distribution
+            of surface and subsurface outcomes.
           </li>
           <li>
-            <strong>ML surrogates for impact sequences</strong> — CNN&nbsp;+&nbsp;BiLSTM/attention models to learn
-            stress-field evolution from multiple impacts, trained with Wasserstein-style losses.
+            <strong>Media degradation and process feedback</strong> — how a media population evolves in service
+            (breakage, rounding, size drift) and what that does to process consistency in peening and other
+            particle-driven operations.
           </li>
           <li>
-            <strong>Experimental tie-in</strong> — future strip/materials campaign (e.g. AM&nbsp;316L vs&nbsp;SAE&nbsp;1070)
-            to map microstructural deformation mechanisms to the “fabric” we predict numerically.
+            <strong>Reduced-order and data-driven models</strong> — Eshelby/inclusion-style analytical formulations,
+            spectral descriptions of heterogeneous stress fields, and ML surrogates trained on FEM/DEM ensembles,
+            packaged so a process engineer can actually run them.
+          </li>
+          <li>
+            <strong>Digital twins for particulate processes</strong> — flowsheet architectures linking media
+            condition, kinematics, coverage, and material response so a production cell can be steered in real time.
           </li>
         </ul>
         <p class="muted">
-          Themes: stochasticity in surface enhancement, spectral descriptions, and making models usable
-          by industry partners (not just in a notebook).
+          Recurring themes: stochasticity as a first-class variable rather than noise, characterization that earns
+          its keep by predicting something, and models that leave the notebook and reach the shop floor.
         </p>
         <div>
+          <span class="pill">powder characterization</span>
+          <span class="pill">particle shape</span>
+          <span class="pill">dynamic image analysis</span>
+          <span class="pill">granular mechanics</span>
+          <span class="pill">DEM / FEM</span>
           <span class="pill">shot peening</span>
           <span class="pill">residual stress</span>
-          <span class="pill">Eshelby / inclusions</span>
-          <span class="pill">RVE FEM</span>
           <span class="pill">digital twin</span>
-          <span class="pill">Wasserstein fitting</span>
         </div>
       </section>
     </div>
 
     <!-- Right column -->
     <div>
-      <section class="card" aria-labelledby="who-i-work-with">
-        <h2 id="who-i-work-with" class="section-title">Who I work with</h2>
-        <p><strong>Academic / Purdue:</strong></p>
+      <section class="card" aria-labelledby="group">
+        <h2 id="group" class="section-title">Group &amp; openings</h2>
+        <div class="callout">
+          I’m recruiting. If you’re interested in powder characterization, granular mechanics, or surface
+          enhancement, get in touch.
+        </div>
         <ul>
-          <li>Advisor: <strong>Prof. Paul Mort</strong></li>
-          <li>Center for Surface Engineering and Enhancement (CSEE)</li>
-          <li>MMRL Shot Peening Center of Excellence</li>
+          <li>PhD and MS students (ME, MSE, or adjacent)</li>
+          <li>Undergraduate researchers at UNC&nbsp;Charlotte</li>
+          <li>Industry partners with a powder or media problem</li>
         </ul>
-        <p><strong>Industry / collaborators:</strong></p>
-        <ul>
-          <li>Electronics Inc.</li>
-          <li>Progressive Surface</li>
-          <li>American Axle &amp; Manufacturing</li>
-          <li>Sandia National Laboratories</li>
-        </ul>
+        <p class="muted">
+          Email works best. Include what you’ve built or measured — that tells me more than a transcript does.
+        </p>
       </section>
 
       <section class="card" aria-labelledby="dissertation">
@@ -259,15 +305,16 @@
           </a>
         </p>
         <p class="muted">
-          Dissertation covering Poisson impact modeling, spectral fabric, DIA-based media characterization,
-          and ML-enabled flowsheets.
+          Purdue University, 2025. Poisson impact modeling, spectral characterization of residual stress fields,
+          DIA-based media characterization, and ML-enabled process flowsheets.
         </p>
       </section>
 
       <section class="card" aria-labelledby="contact">
         <h2 id="contact" class="section-title">Contact / links</h2>
         <p>
-          E-mail: <a href="mailto:lfeltner@purdue.edu">lfeltner@purdue.edu</a><br />
+          E-mail: <a href="mailto:lfeltner@charlotte.edu">lfeltner@charlotte.edu</a><br />
+          Department: <a href="https://mees.charlotte.edu/">MEES @ UNC&nbsp;Charlotte</a><br />
           GitHub Pages: <code>https://feltner515.github.io/homepage/</code>
         </p>
       </section>
@@ -275,7 +322,7 @@
   </main>
 
   <footer>
-    &copy; <span id="year"></span> Langdon Feltner — Purdue University, Materials Engineering.
+    &copy; <span id="year"></span> Langdon Feltner — UNC Charlotte, William States Lee College of Engineering.
   </footer>
 
   <script>
